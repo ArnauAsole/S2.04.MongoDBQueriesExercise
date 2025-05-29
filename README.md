@@ -85,6 +85,7 @@ db.restaurants.find({
   "grades.score": { $gt: 70 },
   "address.coord.0": { $lt: -65.754168 }
 })
+```
 Mateixa consulta sense $and:
 
 ```
@@ -93,6 +94,7 @@ db.restaurants.find({
   "grades.score": { $gt: 70 },
   "address.coord.0": { $lt: -65.754168 }
 })
+```
 No 'American', grau 'A', no a Brooklyn, ordenat descendent per cuina:
 
 ```
@@ -108,10 +110,12 @@ Nom comença amb 'Wil':
 
 ```
 db.restaurants.find({ name: /^Wil/ }, { restaurant_id: 1, name: 1, borough: 1, cuisine: 1 })
+```
 Nom acaba amb 'ces':
 
 ```
 db.restaurants.find({ name: /ces$/ }, { restaurant_id: 1, name: 1, borough: 1, cuisine: 1 })
+```
 Nom conté 'Reg':
 
 ```
@@ -125,6 +129,7 @@ db.restaurants.find({
   borough: "Bronx",
   cuisine: { $in: ["American", "Chinese"] }
 })
+```
 Restaurants en Staten Island, Queens, Bronx o Brooklyn:
 
 ```
